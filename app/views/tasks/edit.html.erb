@@ -1,0 +1,15 @@
+<h1>タスク登録</h1>
+<% if @task.errors.any? %>
+  <p><b><%= @task.errors.count %>件のエラーがあります</b></p>
+  <ul>
+  <% @task.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+
+<%= render 'form', task: @task %>
+
+<%= link_to 'Show', @task %> |
+<%= link_to 'Back', tasks_path %>
